@@ -1,6 +1,8 @@
 # from functions import get_todo , write_todo
 import functions
 import time
+
+
 now = time.strftime("%b %d, %Y and %H:%M:%S")
 print("It is ", now)
 while True:
