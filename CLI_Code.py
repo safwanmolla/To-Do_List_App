@@ -1,7 +1,5 @@
-# from functions import get_todo , write_todo
 import functions
 import time
-
 
 now = time.strftime("%b %d, %Y and %H:%M:%S")
 print("It is ", now)
@@ -12,10 +10,14 @@ while True:
     """
     if 'Add' in user_action:
     Above if statement gets executed even if someone give an input like "edit Add a member" 
-     which should execute the if statement with "Edit" condition
+    which should execute the if statement with "Edit" condition. Hence we implement the following technique. 
     """
 
     if user_action.startswith('Add'):
+
+        # Input Format for User : Add A New To-Do
+        # We assume user has entered input in above prescribed Format.
+        # It will add the "A New To-Do" in the to-do list.
         todo = user_action[4:]
         todo = todo.capitalize()
 
@@ -35,6 +37,10 @@ while True:
             print(f'{index + 1}-{item}', end='')
 
     elif user_action.startswith('Edit'):
+
+        # Input Format for User : Edit 3
+        # We assume user has entered input in above prescribed Format.
+        # It will Edit the 3rd item in the to-do list.
         try:
             number = int(user_action[5:])
             index = number - 1
@@ -44,7 +50,6 @@ while True:
             new_todo = input('Enter new To-Do: ')
             new_todo = new_todo.capitalize()
             todos[index] = new_todo + '\n'
-
             functions.write_todo(todos)
 
         except ValueError:
@@ -54,6 +59,10 @@ while True:
             print(f"{number} does not exists. Do you want to add '{new_todo}' as a new To-Do ?")
             continue
     elif user_action.startswith('Complete'):
+
+        # Input Format for User : Complete 3
+        # We assume user has entered input in above prescribed Format.
+        # It will Remove the 3rd item from the to-do list.
 
         todos = functions.get_todo()
 
