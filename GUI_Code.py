@@ -26,6 +26,7 @@ while True:
     # print(action)
     # print(value)
     # print(value['todos'])
+    # Above will give us some insights about the variables.
     match action:
         case 'Add':
             todos = functions.get_todo()
