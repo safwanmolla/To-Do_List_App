@@ -9,7 +9,7 @@ while True:
 
     """
     if 'Add' in user_action:
-    Above if statement gets executed even if someone give an input like "edit Add a member" 
+    Above if statement gets executed even if someone give an input like "edit Add a todo action" 
     which should execute the if statement with "Edit" condition. Hence we implement the following technique. 
     """
 
