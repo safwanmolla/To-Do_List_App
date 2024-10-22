@@ -6,16 +6,17 @@ input_box = sg.InputText(tooltip="Enter a To-Do",
                          key='todo',
                          size=(30, 10)
                          )
-add_button = sg.Button("Add")
-
 list_box = sg.Listbox(functions.get_todo(),
                       key="todos",
                       size=(30, 10)
                       )
+label2 = sg.Text(key='popUp')
+
+add_button = sg.Button("Add")
 edit_button = sg.Button("Edit")
 complete_button = sg.Button("Complete")
 close_button = sg.Button("Close")
-label2 = sg.Text(key='popUp')
+
 window = sg.Window("My To-Do App",
                    layout=[
                        [label],
@@ -68,5 +69,4 @@ while True:
             break
         case sg.WIN_CLOSED:
             break
-
 window.close()
